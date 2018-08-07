@@ -2,11 +2,37 @@
 <!doctype html>
     <html>
     <head>
-    	<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}">
+    	<link rel="stylesheet" type=text/css href={{ url_for('static', filename='style.css') }}>
     	</head>
 
         <body>
             <h1> so cute!</h1>
             <p> nothing to say anymore </p>
+        	<h1> {{year}}
+        </h1>
+        	 <h1> like_same_sport </h1>
+            <p> My best players: </p>
+            <h2> Players </h2>
+            <ul>
+
+                {% for player in players %}
+                <li> {{player}} </li>
+                {% endfor %}
+            </ul>
+            
+            
+            {% if no_sports == false %}
+                <p> I have no sports! But, I want to get: </p>
+            {% else %}
+                <p> I have sports! My sports are: </p>
+            {% endif %}
+            <h2> Players: </h2>
+  			 <!-- Previous for-loop -
+
+
+
+
+
+
         </body>
     </html>
